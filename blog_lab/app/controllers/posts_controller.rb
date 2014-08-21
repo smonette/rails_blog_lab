@@ -27,5 +27,10 @@ class PostsController < ApplicationController
     @posts =  Post.find(id)
     render :show
   end
+  def delete
+    id = params[:id]
+    Post.find(id).destroy
+    redirect_to "/"
+  end
 
 end

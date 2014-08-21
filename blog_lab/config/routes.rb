@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
-root to: "posts#index"
-get'/posts', to: "posts#index"
 
-get'/posts/new', to: "posts#new"
+  root to: "posts#index"
 
-get'/posts/:id', to: "posts#show"
+  get'/posts', to: "posts#index"
 
-get'/posts/tags', to: "posts#index"
+  get'/posts/new', to: "posts#new"
 
-post '/posts', to: 'posts#create'
+  get'/posts/:id', to: "posts#show"
+
+  get'/posts/tags', to: "posts#index"
+
+  post '/posts', to: 'posts#create'
+
+  post '/delete', to: 'posts#delete'
+
 end

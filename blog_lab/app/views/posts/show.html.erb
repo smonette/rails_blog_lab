@@ -3,4 +3,11 @@
 <p><%= @posts.content %></p>
 <p>Tag: <%= @posts.tags.map(&:name) %></p>
 
+  <form action="/delete" method="post" role="form">
+    <input type="hidden" name="id" value="<%= @posts.id %>">
+    <%= token_tag form_authenticity_token %>
+    <button type="submit" class="btn btn-default">Delete</button>
+  </form>
+
+
 <a href="/">See all posts &raquo;</a>

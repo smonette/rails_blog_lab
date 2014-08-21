@@ -1,13 +1,12 @@
-body {
-  background-color: rgba(247,255,234,1);
-  color: #5B5E68;
-}
 #blog {
+  background: url('congruent_pentagon.png') 0 0 repeat;
+  color: #5B5E68;
 
   section{
     max-width: 960px;
     margin:0 auto;
     padding: 20px 50px;
+    background-color: rgba(247,255,234, 0.8);
   }
   a {
     color:rgba(189,206,255,1);
@@ -24,6 +23,7 @@ body {
     border:1px solid rgba(91,94,104,0.5);
     border-bottom:3px solid rgba(91,94,104,0.5);
     text-align: center;
+    background: white;
   }
   .post .author {
     font-style: italic;
