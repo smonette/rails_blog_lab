@@ -1,0 +1,6 @@
+<h1><%= @posts.name %></h1>
+<h4><%= @posts.author %></h4>
+<p><%= @posts.content %></p>
+<p>Tag: <%= @posts.tags.map(&:name) %></p>
+
+<a href="/">See all posts &raquo;</a>

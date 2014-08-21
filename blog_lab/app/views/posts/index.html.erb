@@ -1,0 +1,16 @@
+<h1>All Posts</h1>
+
+  <% @posts.each do |post| %>
+
+    <div class="post">
+      <a href="/posts/<%= post.id %>">
+        <h3><%= post[:name] %></h3>
+      </a>
+        <p class="author"><%= post[:author] %> </p>
+    </div>
+  <br><br>
+  <% end %>
+
+
+
+<a href="/posts/new">Add new posts &raquo;</a>
