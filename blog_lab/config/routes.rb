@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get'/posts/:id', to: "posts#show"
 
-  get'/posts/tags', to: "posts#index"
+  get'/tags', to: "tags#index"
 
   post '/posts', to: 'posts#create'
 

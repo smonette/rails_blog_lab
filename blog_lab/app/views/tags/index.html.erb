@@ -1,0 +1,19 @@
+<h2>All Tags</h2>
+
+  <% @tags.each do |tag| %>
+
+    <h3><%= tag[:name] %></h3>
+
+      <% tag.posts.each do |post| %>
+
+         <a href="/posts/<%= post.id %>">
+          <%= post.name %> - <span class="author"><%= post.author %></span>
+        </a><br>
+
+      <% end %>
+
+  <% end %>
+
+
+
+<a href="/posts/new"  class="see-all">Add a new post &raquo;</a>

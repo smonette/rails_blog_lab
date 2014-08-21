@@ -20,8 +20,17 @@
 </head>
 <body id="blog">
   <div class="container-fluid">
+    <header><h1>WDI July Blog<h1></header>
     <section>
       <%= yield %>
+
+    <footer>
+      <ul class="nav nav-pills nav-justified">
+        <li><a href="/">Home</a></li>
+        <li><a href="/posts">All Posts</a></li>
+        <li><a href="/tags">All Tags</a></li>
+      </ul>
+    </footer>
     </section>
   </div>
 </body>

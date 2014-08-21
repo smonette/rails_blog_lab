@@ -1,5 +1,5 @@
-<h1><%= @posts.name %></h1>
-<h4><%= @posts.author %></h4>
+<h2><%= @posts.name %></h2>
+<h4>By <%= @posts.author %></h4>
 <p><%= @posts.content %></p>
 <p>Tag: <%= @posts.tags.map(&:name) %></p>
 
@@ -10,4 +10,4 @@
   </form>
 
 
-<a href="/">See all posts &raquo;</a>
+<a href="/"  class="see-all">See all posts &raquo;</a>
