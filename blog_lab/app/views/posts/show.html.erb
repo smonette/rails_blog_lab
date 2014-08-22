@@ -5,6 +5,14 @@
 
 <p><a href="/posts/<%=  @posts.id %>/edit" class="btn btn-default">Edit</a> <%= button_to "Delete this!", post_path(@posts), method: :delete, class: "btn btn-danger" %></p>
 <div class="comments">
-  <a href="/posts/<%=  @posts.id %>/comments" class="btn btn-default">View Comments (<%=  @posts.comments.length %>)</a>
+
+  <h2>Comments (<%=  @posts.comments.length %>)</h2>
+    <% @comments.each do |comment| %>
+
+    <h3><%= comment.title %></h3>
+    <p><%= comment.body  %></p>
+    <% end %>
+  <a href="/posts/<%=  @posts.id %>/comments/new" class="btn btn-default">Add Comment</a>
+
 </div>
 

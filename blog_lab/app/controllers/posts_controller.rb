@@ -25,7 +25,9 @@ class PostsController < ApplicationController
   def show
     id = params[:id]
     @posts =  Post.find(id)
+    @comments = @posts.comments.all
     render :show
+
   end
   def edit
     id = params[:id]
