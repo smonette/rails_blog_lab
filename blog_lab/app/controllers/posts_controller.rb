@@ -27,9 +27,29 @@ class PostsController < ApplicationController
     @posts =  Post.find(id)
     render :show
   end
-  def delete
+  def edit
     id = params[:id]
-    Post.find(id).destroy
+    @post = Post.find(id)
+    render :edit
+  end
+  def update
+      post_id = params[:id]
+      post = Post.find_by_id(post_id)
+
+      post_attributes = params.require(:post).permit(:name, :author, :content)
+      new_tag = params[:tag].permit(:name)
+
+      # my_tag = Tag.create(new_tag)
+      my_tag = Tag.find_or_create_by(name: new_tag[:name])
+
+      post.update_attributes(post_attributes)
+      post.tags << my_tag
+      redirect_to post
+  end
+  def destroy
+    id = params[:id]
+    post = Post.find_by_id(id)
+    post.destroy
     redirect_to "/"
   end
 

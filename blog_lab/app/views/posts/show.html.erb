@@ -3,11 +3,8 @@
 <p><%= @posts.content %></p>
 <p>Tag: <%= @posts.tags.map(&:name) %></p>
 
-  <form action="/delete" method="post" role="form">
-    <input type="hidden" name="id" value="<%= @posts.id %>">
-    <%= token_tag form_authenticity_token %>
-    <button type="submit" class="btn btn-default">Delete</button>
-  </form>
+<p><a href="/posts/<%=  @posts.id %>/edit" class="btn btn-default">Edit</a> <%= button_to "Delete this!", post_path(@posts), method: :delete, class: "btn btn-danger" %></p>
+<div class="comments">
+  <a href="/posts/<%=  @posts.id %>/comments" class="btn btn-default">View Comments (<%=  @posts.comments.length %>)</a>
+</div>
 
-
-<a href="/"  class="see-all">See all posts &raquo;</a>

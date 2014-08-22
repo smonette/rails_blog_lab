@@ -1,0 +1,19 @@
+<h3><%= @post.name %></h3>
+<p><%=  @post.author %></p>
+<p><%=  @post.content%></p>
+
+<div class="comments">
+  <h2>Add a New Comment</h3>
+  <%= form_for [@post, @comment] do |f| %>
+      <div class="form-group">
+        <%= f.text_field :title, placeholder: "Comment Title", class: "form-control"  %>
+      </div>
+      <div class="form-group">
+        <%= f.text_area :body, placeholder: "Comment Text", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save comment" , class: "form-control btn btn-default" %>
+      </div>
+
+  <% end %>
+</div>

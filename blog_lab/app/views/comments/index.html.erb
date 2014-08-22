@@ -1,0 +1,13 @@
+<h3><%= @post.name %></h3>
+<p><%=  @post.author %></p>
+<p><%=  @post.content %></p>
+
+<div class="comments">
+
+  <h2>Comments</h2>
+  <% @comments.each do |comment| %>
+    <h3><%= comment.title %></h3>
+    <p><%= comment.body  %></p>
+  <% end %>
+  <a href="/posts/<%=  @post.id %>/comments/new" class="btn btn-default">Add Comment</a>
+</div>

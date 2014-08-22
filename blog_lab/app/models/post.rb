@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
     has_many :feeds
+    has_many :comments
     has_many :tags, :through => :feeds
 
     # validates_presence_of :name
